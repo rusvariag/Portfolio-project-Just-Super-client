@@ -1,13 +1,20 @@
 <div class="container">
-    <div class="row mt-md-5">
-        <div class="col-12 col-md-4">
-            <router-outlet></router-outlet>
-        </div>
-        <div class="col-12 col-md-4 pt-4 pt-md-0">
-            <app-about></app-about>
-        </div>
-        <div class="col-12 col-md-4 pt-4 pt-md-0">
-            <app-details></app-details>
-        </div>
+  <div class="row mt-md-5">
+    <div class="col-12 col-md-4">
+      <router-outlet></router-outlet>
+      <div style="margin: 50px 0;">
+        <h4>To see admin page, enter next credentials :</h4>
+        <ul>
+          <li><code>email: admin@mail.com</code></li>
+          <li><code>pass: 12345678</code></li>
+        </ul>
+      </div>
     </div>
+    <div class="col-12 col-md-4 pt-4 pt-md-0">
+      <app-about></app-about>
+    </div>
+    <div class="col-12 col-md-4 pt-4 pt-md-0">
+      <app-details></app-details>
+    </div>
+  </div>
 </div>
