@@ -1,0 +1,34 @@
+.category-panel-container ul {
+    padding: 0;
+    display: flex;
+    border-top: 2px solid #e2e2e2;
+    border-bottom: 2px solid #e2e2e2;
+    list-style: none;
+    letter-spacing: 0.5px;
+}
+
+.category-panel-container li {
+    flex: 1;
+}
+
+.category-panel-container li span{
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    height: 68%;
+    border-right: 2px solid #e2e2e2;
+    margin: 20px 0;
+    padding: 5px 0;
+    pointer-events: none;
+}
+
+.category-panel-container li:first-child span{
+    border-left: 2px solid #e2e2e2;
+}
+
+.category-panel-container li:hover{
+    color: #041E42;
+    font-weight: bold;
+    cursor: pointer;
+}

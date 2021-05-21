@@ -1,0 +1,12 @@
+.product-card {
+    cursor: pointer;
+    z-index: 2;
+}
+
+.product-name{
+    height: 50px;
+}
+
+.product-card:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}

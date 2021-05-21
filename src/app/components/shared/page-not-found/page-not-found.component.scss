@@ -1,0 +1,21 @@
+.e404 h2 {
+    font-size: 200px;
+    font-weight: normal;
+    font-weight: normal;
+  }
+  
+  .e404 h2 img {
+    display: inline;
+    width: 140px;
+    padding: 10px;
+    animation: spin 10s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(359deg);
+    }
+  }

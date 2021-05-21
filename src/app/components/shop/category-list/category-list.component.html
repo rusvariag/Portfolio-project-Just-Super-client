@@ -1,0 +1,7 @@
+<div class="category-panel-container">
+    <nav>
+        <ul>
+            <li *ngFor="let category of categoryList" (click)="getProducts($event)" id="{{category._id}}"><span>{{category.name}}</span></li>
+        </ul>
+    </nav>
+</div>

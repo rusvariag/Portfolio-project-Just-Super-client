@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="card border-0">
+        <img class="rounded" width="100%"
+            src="https://www.steppingstonesnorthedinburgh.co.uk/wp-content/uploads/2019/08/Welcome-back.jpg" alt="" />
+        <div class="card-body">
+            <div class="row">
+                <div class="col-6 offset-3">
+                    <div *ngIf="isCardExist; then thenBlock else elseBlock"></div>
+                    <ng-template #thenBlock>
+                        <button routerLink="/shop/shopping" class="btn btn-secondary btn-block rounded-pill mt-4"
+                            (click)="continueShopping()">
+                            Resume Shopping
+                        </button>
+                    </ng-template>
+                    <ng-template #elseBlock>
+                        <button routerLink="/shop/shopping" class="btn btn-secondary btn-block rounded-pill mt-4"
+                            (click)="startShopping()">
+                            Start Shopping
+                        </button>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

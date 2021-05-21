@@ -1,0 +1,11 @@
+<header
+    class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-primary border-bottom shadow-sm text-white">
+    <div class="h5 my-0 me-md-auto fw-normal text-uppercase">
+        <strong class="fs-3 text-danger">Just Super</strong>
+        <sub class="text-danger text-lowercase ms-2 me-5">it's that simple</sub>
+        <sup class="ms-5">email: <span class="text-lowercase">justsuper [ at ] mail.com</span></sup>
+        <sup class="ms-5">phone: <span class="text-lowercase">##-###-##-##</span></sup>
+    </div>
+    <div class="pe-5"><span>Hello: </span><span class="text-capitalize">{{name}}</span></div>
+    <button class="btn btn-outline-success" *ngIf="isLogged()" (click)="logout()">Logout</button>
+</header>

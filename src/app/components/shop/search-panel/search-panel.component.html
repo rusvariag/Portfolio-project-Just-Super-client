@@ -1,0 +1,8 @@
+<div >
+    <form [formGroup]="searchForm" class="input-group mb-3" (ngSubmit)="submit()">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon" (click)="submit()">
+            <fa-icon [icon]="faSearch"></fa-icon>
+        </button>
+        <input type="text" id="searchValue" class="form-control" formControlName="searchValue" placeholder="Search" />
+    </form>
+</div>

@@ -1,0 +1,27 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Choose quantity</h4>
+        <button type="button" class="btn btn-outline-secondary" aria-label="Close"
+            (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <input class="w-100" type="text" [(ngModel)]="quantity">
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" (click)="modal.close('Save click')">Save</button>
+    </div>
+</ng-template>
+
+<div class="card product-card mb-4 shadow-sm" (click)="open(content)">
+    <img class="bd-placeholder-img cart-img-top p-2" width="100%" [src]="productItem.image">
+    <div class="card-body">
+        <p class="card-text product-name">
+            <small>{{productItem.name | slice: 0:50}}</small>
+        </p>
+        <p class="cart-text">
+            <strong>{{ productItem.price | currency: 'USD'}}</strong>
+        </p>
+    </div>
+</div>

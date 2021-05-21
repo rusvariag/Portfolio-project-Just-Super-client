@@ -1,0 +1,17 @@
+<div *ngIf="isLoaded; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let item of cartItems">
+            <app-cart-item [cartId]="cardId" [cartItem]="item"></app-cart-item>
+        </li>
+        <li class="d-flex justify-content-between list-group-item active bg-primary">
+            <div class="align-middle pt-2">
+                <span><strong class="me-3">Total :</strong> {{ cartTotal | currency: 'USD'}}</span>
+            </div>
+            <button class="btn btn-outline-success float-end" (click)="goToOrder()">Order</button>
+        </li>
+    </ul>
+</ng-template>
+<ng-template #elseBlock>
+    <div class="alert alert-info bg-primary text-success text-center">Your Cart is Empty</div>
+</ng-template>

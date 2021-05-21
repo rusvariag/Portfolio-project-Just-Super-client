@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import './styles/variables.scss';
+
+html,
+body {
+  font-family: sans-serif;
+  height: 100%;
+}
+
+$theme-colors: (
+  "primary": $primaryColor,
+  "secondary": $primaryLightColor,
+  "success": $secondaryColor,
+  "danger": $SecondaryLightColor,
+  "warning": $fontLightColor,
+  "info": $warning
+);
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";

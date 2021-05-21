@@ -1,0 +1,21 @@
+<div class="container position-absolute top-50 start-50 translate-middle">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card text-center bg-secondary text-danger rounded-3">
+                <div class="card-header">
+                    <h3 class="card-title mt-4 text-uppercase fw-bold">thank you</h3>
+                    <p class="text-uppercase">for your purchase</p>
+                </div>
+                <div class="card-body text-white">
+                    <p class="text-capitalize font-monospace ">to download your bill, press
+                        <a class="btn btn-link text-white" target="_blank" rel="noopener noreferrer"
+                            href="/api/order/{{orderId}}">
+                            here
+                        </a>
+                    </p>
+                    <button class="btn btn-success mb-3 mt-4" (click)="onFinish()">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

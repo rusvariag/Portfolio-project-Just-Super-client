@@ -1,0 +1,127 @@
+<div class="container w-25">
+    <div id="bs-stepper" class="bs-stepper linear">
+        <div class="bs-stepper-header">
+            <div class="step" data-target="#test-l-1">
+                <button class="step-trigger">
+                    <span class="bs-stepper-circle">1</span>
+                    <span class="bs-stepper-label">Step 1</span>
+                </button>
+            </div>
+            <div class="line"></div>
+            <div class="step" data-target="#test-l-2">
+                <button class="step-trigger">
+                    <span class="bs-stepper-circle">2</span>
+                    <span class="bs-stepper-label">Step 2</span>
+                </button>
+            </div>
+        </div>
+        <div class="bs-stepper-content">
+            <form [formGroup]="registerForm">
+                <div id="test-l-1" class="content">
+                    <div class="form-group mb-3">
+                        <label for="identity">Identity</label>
+                        <input id="identity" class="form-control"
+                            [ngClass]="{'is-invalid': registerForm.get('identity').touched && registerForm.get('identity').invalid}"
+                            formControlName="identity" />
+                        <span class="invalid-feedback">Identity can't be blank.</span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="email">Email address</label>
+                        <input id="email" class="form-control"
+                            [ngClass]="{'is-invalid': registerForm.get('email').touched && registerForm.get('email').invalid}"
+                            formControlName="email" />
+                        <span class="invalid-feedback">
+                            <span *ngIf="registerForm.get('email').hasError('required')">Email can't be blank.</span>
+                            <span *ngIf="registerForm.get('email').hasError('email')">Email must be valid
+                                (xxx@xxx.xxx).</span>
+                        </span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="password">Password</label>
+                        <input id="password" class="form-control" type="password"
+                            [ngClass]="{'is-invalid': registerForm.get('password').touched && registerForm.get('password').invalid}"
+                            formControlName="password" (keyup)="triggerValidation()" />
+                        <span class="invalid-feedback">
+
+                            <span *ngIf="registerForm.get('password').hasError('required')">Password can't be
+                                blank.</span>
+                            <span *ngIf="registerForm.get('password').hasError('minlength')">Password must contain
+                                minimum
+                                {{minLengthChar}} characters.</span>
+                        </span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input id="confirmPassword" class="form-control" type="password"
+                            [ngClass]="{'is-invalid': registerForm.get('confirmPassword').touched && registerForm.get('confirmPassword').invalid}"
+                            formControlName="confirmPassword" />
+                        <span class="invalid-feedback">Password must match.</span>
+                    </div>
+
+                    <div class="container mt-4 d-flex justify-content-between">
+                        <button routerLink="/auth/landing/login" class="btn btn-primary rounded-pill w-25">
+                            Back
+                        </button>
+                        <button (click)="next()" class="btn btn-primary rounded-pill w-25"
+                            [disabled]="nextValidation()">
+                            Next
+                        </button>
+                    </div>
+
+                </div>
+                <div id="test-l-2" class="content">
+
+                    <div class="form-group mb-3">
+                        <label for="firstname">First Name</label>
+                        <input id="firstname" class="form-control"
+                            [ngClass]="{'is-invalid': registerForm.get('firstname').touched && registerForm.get('firstname').invalid}"
+                            formControlName="firstname" />
+                        <span class="invalid-feedback">First Name can't be blank.</span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="lastname">Last Name</label>
+                        <input id="lastname" class="form-control"
+                            [ngClass]="{'is-invalid': registerForm.get('lastname').touched && registerForm.get('lastname').invalid}"
+                            formControlName="lastname" />
+                        <span class="invalid-feedback">Last Name can't be blank.</span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="city">City</label>
+                        <select class="form-select" id="city"
+                            [ngClass]="{'is-invalid': registerForm.get('city').touched && registerForm.get('city').invalid}"
+                            formControlName="city">
+                            <option selected disabled>Choose...</option>
+                            <option *ngFor="let city of cityList" value="{{city.name}}">{{city.name}}</option>
+                        </select>
+                        <span class="invalid-feedback">City can't be blank.</span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="street">Street</label>
+                        <input id="street" class="form-control"
+                            [ngClass]="{'is-invalid': registerForm.get('street').touched && registerForm.get('street').invalid}"
+                            formControlName="street" />
+                        <span class="invalid-feedback">Street can't be blank.</span>
+                    </div>
+
+                    <div class="text-center mt-3 collapse" style="color: red;" [ngClass]="{ 'show': errorMessage }">For errors look in the console</div>
+
+                    <div class="container mt-4 d-flex justify-content-between">
+                        <button (click)="back()" class="btn btn-primary rounded-pill w-25">
+                            Back
+                        </button>
+                        <button (click)="register()" class="btn btn-primary rounded-pill w-25"
+                            [disabled]="registerForm.invalid">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
